@@ -160,15 +160,15 @@ class Attribute(Enum):
 
 default_attributes = dict(Times=[Attribute.Flat, Attribute.Orderless, Attribute.OneIdentity],
                           Plus=[Attribute.Flat, Attribute.Orderless, Attribute.OneIdentity],
-                          And=[Attribute.Orderless, Attribute.OneIdentity],
-                          Or=[Attribute.Orderless, Attribute.OneIdentity],
+                          And=[Attribute.Flat, Attribute.Orderless, Attribute.OneIdentity],
+                          Or=[Attribute.Flat, Attribute.Orderless, Attribute.OneIdentity],
                           Pi=[Attribute.Constant], E=[Attribute.Constant])
 
 
 class Expression(Pattern):
     """
     Base class for all mathematical expressions. It consists of a head and a number of attributes. For a list of
-    attributes see :py:class:`~expressions.Attribute`.
+    attributes see :py:class:`~evaluation.Attribute`.
     This is a base class and should not be instantiated. In some cases however it can be useful to subclass
     this class.
     """

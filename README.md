@@ -1,5 +1,6 @@
 # Piper
 “And it’s whispered that soon if we all call the tune
+
 Then the piper will lead us to reason”
 
 The goal of this project was to develop and maintain a computer algebra system (commonly abbreviated as CAS), that is capable of manipulating formal expressions to produce new expressions. A CAS can be thought of as a system that is trying to automatically derive expressions from the input the user gave. As an example consider the following interaction between Piper and the user:
@@ -26,6 +27,9 @@ This probably won't happen, since I don't have much time to work on it.
 * Add algorithms for calculating limits, integrals, etc.
 * Add some sort of front-end
 * Eventually rewrite the project in a faster language with native threading support (maybe Rust)
+
+## Other software
+There are many projects that are similar (and more advanced). The code in this repository is heavily influenced by the [Elision Term Rewriter](https://github.com/elision/elision).
 
 ## Contributing
 Feel free to send pull requests with bug fixes, improvements and so on.

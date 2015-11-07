@@ -160,7 +160,7 @@ class LambdaRule(Rule):
     check whether the given expression matches its pattern and call the lambda function on the matching expressions.
 
     This rule is often used for addition and multiplication of integers which is hard to expression only using
-    :py:class:`~evaluation.SubstitutionRule`s.
+    :py:class:`~evaluation.SubstitutionRule`.
     """
 
     def __init__(self, pattern, code, guards=None):
