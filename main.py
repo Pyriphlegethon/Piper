@@ -1,4 +1,4 @@
-from expressions import Function, Symbol, Integer, Sequence, Real, Rational, Complex, BoundPattern, Blank, Bindings
+from expressions import Function, Symbol, Integer, Sequence
 from time import clock
 from initialize_rules import kernel
 

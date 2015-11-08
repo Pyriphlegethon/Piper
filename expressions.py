@@ -859,6 +859,7 @@ class MatchIterator(Iterator):
     """
 
     """
+
     pass
 
 
@@ -939,12 +940,17 @@ class SequenceMatcher(Iterable):
     def __iter__(self):
         """
         Returns an iterator of all possible matches.
+
+        **Returns**:
+
+            ``An iterator over all possible matches.``
         """
         return self._match()
 
 
 class MatchHelper:
     """
+
     """
 
     @staticmethod
@@ -977,18 +983,11 @@ class MatchHelper:
     # FIXME: doesn't only show the bug.
     def eliminate_bound_patterns(expressions, patterns, bindings):
         return MatchHelper.eliminate_constants(expressions, patterns)
-        new_patterns = []
-        for pattern in patterns:
-            if isinstance(pattern, BoundPattern) and pattern.name in bindings and bindings[pattern.name].constant:
-                new_patterns.append(bindings[pattern.name])
-            else:
-                new_patterns.append(pattern)
-        return MatchHelper.eliminate_constants(expressions, new_patterns)
 
 
 class OrderlessSequenceMatcher(Iterable):
     """
-    The SequenceMatcher class will try to match a list of patterns and a list of expressions and return all matches as
+    The OrderlessSequenceMatcher class will try to match a list of patterns and a list of expressions and return all matches as
     an iterator. The lists can be reordered arbitrarily.
     """
 
@@ -1017,11 +1016,9 @@ class OrderlessSequenceMatcher(Iterable):
         return self._match()
 
 
-from collections.abc import Iterator
-
-
 class OrderlessMatchIterator(Iterator):
     """
+
     """
 
     def __init__(self, expressions, patterns, bindings):
@@ -1048,6 +1045,7 @@ class OrderlessMatchIterator(Iterator):
 
 class GroupingIterator(Iterator):
     """
+
     """
 
     def __init__(self, elements, patterns, head):
@@ -1109,7 +1107,6 @@ class GroupingIterator(Iterator):
             marker += 1
 
         self.current = next_list
-        #print(self.current)
         self._advance()
 
         return True
@@ -1123,6 +1120,7 @@ class GroupingIterator(Iterator):
 
 class FlatMatchIterator(Iterator):
     """
+
     """
 
     def __init__(self, expressions, patterns, bindings, head):
@@ -1153,7 +1151,7 @@ class FlatMatchIterator(Iterator):
 
 class FlatSequenceMatcher(Iterable):
     """
-    The SequenceMatcher class will try to match a list of patterns and list of expressions and return all matches as
+    The FlatSequenceMatcher class will try to match a list of patterns and list of expressions and return all matches as
     an iterator. The items in the lists can be grouped arbitrarily.
     """
 
@@ -1188,6 +1186,7 @@ class FlatSequenceMatcher(Iterable):
 
 class OrderlessFlatIterator(Iterator):
     """
+
     """
 
     def __init__(self, expressions, patterns, bindings, head):
@@ -1215,8 +1214,8 @@ class OrderlessFlatIterator(Iterator):
 
 class OrderlessFlatSequenceMatcher(Iterable):
     """
-    The SequenceMatcher class will try to match a list of patterns and list of expressions and return all matches as
-    an iterator. The items in the lists can be grouped arbitrarily.
+    The OrderlessFlatSequenceMatcher class will try to match a list of patterns and list of expressions and return all
+    matches as an iterator. The items in the lists can be grouped and reordered arbitrarily.
     """
 
     def __init__(self, expressions, patterns, bindings, head):
