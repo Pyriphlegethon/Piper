@@ -75,7 +75,7 @@ class Kernel:
                     # print()
                     break
 
-        # FIXME: This code is fucking slow. There has to be a better way!
+        # FIXME: This code is very slow. There has to be a better way!
         if isinstance(expression, Function):
             new_head = expression.head
             new_head = self.evaluate(new_head)
